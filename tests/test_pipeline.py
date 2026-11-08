@@ -24,8 +24,16 @@ s=sessions[0]
 assert s.expected==len(plain) and bytes(s.data)==plain and s.duplicates==1
 assert len(s.acks)==4 and s.missing==0 and s.conflicts==0
 assert s.verify==(0xffffffff ^ sum(plain))
-wire=encrypt_verified(plain)
+# A 4-byte-aligned application not divisible by 8 roundtrips without extra padding.
+app=plain[:-4]
+wire=encrypt_verified(app)
 restored,check=decrypt_verified(wire)
-assert restored==plain and check==checksum(plain)
+assert restored==app and check==checksum(app)
 assert wire==encrypt_verified(restored)
+# For an 8-byte-aligned input, encoder appends 4 zero bytes before checksum.
+padded_wire=encrypt_verified(plain)
+padded,check2=decrypt_verified(padded_wire)
+assert padded==plain+b"\\x00"*4
+assert check2==checksum(padded)
+assert encrypt_verified(padded)==padded_wire
 print("PASS: synthetic IAP framing, duplicate handling, checksum, TEA roundtrip")

@@ -1,0 +1,11 @@
+# Third-party firmware and private captured payloads; do not commit these.
+*.bin
+*.bin.enc
+*.enc
+yellowwire_raw*
+local_shfw_app*
+extracted/
+__pycache__/
+*.pyc
+*.log
+.DS_Store

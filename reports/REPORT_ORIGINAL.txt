@@ -1,0 +1,37 @@
+RAW: yellowwire_raw.bin, 89314 Bytes, SHA256=e78f4f66692178b8cb4d086138b0106884fe0a729c3a15dda114a4909ebd49a3
+Gueltige Frames: 3196; CRC-Fehler/Scheinheader: 2; Fremdbytes: 66; unvollstaendige Kandidaten: 0
+CMD-Haeufigkeit: {1: 27, 2: 2, 4: 14, 5: 2, 7: 1, 8: 366, 9: 1, 10: 4, 11: 368, 49: 4, 52: 4, 57: 6, 58: 3, 97: 13, 100: 800, 101: 1581}
+Wichtig: UART-Buffer-Overruns ohne Framingfehler sind mit diesem reinen Byte-Stream NICHT ausgeschlossen.
+IAP-Parser: klassische CMD 0x07 BEGIN, 0x08 DATA, 0x09 VERIFY, 0x0A RESET, 0x0B ACK; ESC dst=0x20.
+Ein Kandidat ist nicht automatisch ein entschluesseltes/dekomprimiertes Flash-Binary.
+
+Session 1, Start RAW-Offset 17045
+  IAP BEGIN Laenge: 46800
+  CMD08 Frames: 366, empfangene Nutzbytes: 46848, gespeichert: 46800
+  Zaehlerluecken: 0, Konflikte: 0, Retransmits: 0
+  IAP VERIFY: 0xffa4d460
+  ~SUM32(speicher): 0xffa4d460, Pruefsumme passt: True
+  ACKs: 368; Status: TRANSFER-CHECKSUM OK (aber andere Fehler im Stream)
+  Datei: session_01_wire_candidate.bin; SHA256=afe890b6214ea74b2380e5e62bc46a168f2a23e6120e9b4ba469843f75cfbc72
+
+Top Richtungen/CMD:
+  21->20 CMD65: 1581
+  21->20 CMD64: 416
+  20->21 CMD64: 384
+  20->3E CMD0B: 368
+  3E->20 CMD08: 366
+  21->20 CMD61: 13
+  20->3E CMD01: 13
+  3E->20 CMD01: 13
+  20->3E CMD04: 13
+  3E->20 CMD0A: 4
+  3E->20 CMD31: 4
+  20->3E CMD34: 4
+  3E->20 CMD39: 3
+  20->3E CMD39: 3
+  20->3E CMD3A: 3
+  3E->20 CMD02: 2
+  20->3E CMD05: 2
+  3E->20 CMD07: 1
+  3E->20 CMD09: 1
+  20->21 CMD01: 1

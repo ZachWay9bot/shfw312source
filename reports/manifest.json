@@ -1,0 +1,33 @@
+{
+  "name": "SHFW 3.1.2 candidate G30D 3-cap OTA reconstruction",
+  "observed_at": "2026-11-07",
+  "repo_created_at": "2026-11-08",
+  "version_validation": "Exact SHFW 3.1.2 not independently proven from app bytes",
+  "mcu": "STM32F103 medium-density",
+  "location": "G30D Gen1 3-Cap",
+  "capture": {
+    "size": 89314,
+    "sha256": "e78f4f66692178b8cb4d086138b0106884fe0a729c3a15dda114a4909ebd49a3",
+    "frames": 3196,
+    "crc_fail": 2,
+    "other_bytes": 66
+  },
+  "ota": {
+    "size": 46800,
+    "sha256": "afe890b6214ea74b2380e5e62bc46a168f2a23e6120e9b4ba469843f75cfbc72",
+    "cmd08": 366,
+    "missing": 0,
+    "retransmits": 0,
+    "transfer_checksum": "0xFFA4D460"
+  },
+  "app": {
+    "size": 46796,
+    "sha256": "7a82f65d5032b8bcc96ebd165bb6724134618772b95669f5c5f5e8a21faff2d0",
+    "candidate_base": "0x08001000",
+    "reset": "0x08001189",
+    "stack_pointer": "0x20002988",
+    "plaintext_checksum": "0x76756A9D",
+    "roundtrip": true
+  },
+  "binary_distribution": "Withheld from public repository; local samples required"
+}

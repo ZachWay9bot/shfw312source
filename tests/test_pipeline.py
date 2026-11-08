@@ -33,7 +33,7 @@ assert wire==encrypt_verified(restored)
 # For an 8-byte-aligned input, encoder appends 4 zero bytes before checksum.
 padded_wire=encrypt_verified(plain)
 padded,check2=decrypt_verified(padded_wire)
-assert padded==plain+b"\\x00"*4
+assert padded==plain+bytes(4)
 assert check2==checksum(padded)
 assert encrypt_verified(padded)==padded_wire
 print("PASS: synthetic IAP framing, duplicate handling, checksum, TEA roundtrip")
